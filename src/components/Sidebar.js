@@ -14,16 +14,6 @@ const Sidebar = () => {
       <div className="mb-5">
         <div className="text-xl font-semibold mb-2">Wallets</div>
         <Wallets />
-        {/* <ul>
-          <li className="flex items-center justify-between mb-4">
-            <div>Home Wallet</div>
-            <div>$235,000</div>
-          </li>
-          <li className="flex items-center justify-between mb-4">
-            <div>Investment</div>
-            <div>$875,000</div>
-          </li>
-        </ul> */}
       </div>
       <div>
         <div className="text-xl font-semibold mb-2">Categories</div>

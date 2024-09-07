@@ -87,23 +87,40 @@ const deleteWallet = async (id) => {
 };
 
 // Expense Items API
-export const getExpenseItemsByWallet = async (walletId) => {
-  const response = await axios.get(`${API_BASE_URL}/wallets/${walletId}/expense-items`);
-  return response.data;
-};
 
+// Create Expense Item
 export const createExpenseItem = async (expenseItem) => {
   const response = await axios.post(`${API_BASE_URL}/expense-items`, expenseItem);
   return response.data;
 };
 
-export const updateExpenseItem = async (id, expenseItem) => {
-  const response = await axios.put(`${API_BASE_URL}/expense-items/${id}`, expenseItem);
+// Get All Expense Items
+export const getAllExpenseItems = async () => {
+  const response = await axios.get(`${API_BASE_URL}/expense-items`);
   return response.data;
 };
 
-export const deleteExpenseItem = async (id) => {
-  const response = await axios.delete(`${API_BASE_URL}/expense-items/${id}`);
+// Get Expense Items by Wallet ID
+export const getExpenseItemsByWallet = async (walletId) => {
+  const response = await axios.get(`${API_BASE_URL}/expense-items?wallet=${walletId}`);
+  return response.data;
+};
+
+// Get Single Expense Item by ID
+export const getExpenseItemById = async (itemId) => {
+  const response = await axios.get(`${API_BASE_URL}/expense-items/${itemId}`);
+  return response.data;
+};
+
+// Update Expense Item
+export const updateExpenseItem = async (itemId, updates) => {
+  const response = await axios.put(`${API_BASE_URL}/expense-items/${itemId}`, updates);
+  return response.data;
+};
+
+// Delete Expense Item
+export const deleteExpenseItem = async (itemId) => {
+  const response = await axios.delete(`${API_BASE_URL}/expense-items/${itemId}`);
   return response.data;
 };
 
